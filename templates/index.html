@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .btn-custom { margin: 0 10px; } /* Add margin to the custom buttons */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <a href="/predict" class="btn btn-primary btn-custom">Predict</a>
+            <a href="/heatmap" class="btn btn-primary btn-custom">Show Model HeatMap</a>
+            <a href="/data_visualization" class="btn btn-primary btn-custom">Data Visualization</a>
+            <a href="/" class="btn btn-primary btn-custom">HOME</a>
+        </div>
+        <h1 class="mt-5 text-center">Enter the Data</h1>
+        {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+        <form action="/predict" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Air_temperature">Air Temperature:</label>
+                        <input type="text" id="Air_temperature" name="Air_temperature" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Process_temperature">Process Temperature:</label>
+                        <input type="text" id="Process_temperature" name="Process_temperature" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Rotational_speed">Rotational Speed:</label>
+                        <input type="text" id="Rotational_speed" name="Rotational_speed" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Torque">Torque:</label>
+                        <input type="text" id="Torque" name="Torque" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Tool_wear">Tool Wear:</label>
+                        <input type="text" id="Tool_wear" name="Tool_wear" class="form-control">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Type_L">Type L:</label>
+                        <input type="text" id="Type_L" name="Type_L" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 offset-md-3"> <!-- Centering the input field -->
+                    <div class="form-group">
+                        <label for="Type_M">Type M:</label>
+                        <input type="text" id="Type_M" name="Type_M" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center"> <!-- Centering the button -->
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-primary btn-block">Predict</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

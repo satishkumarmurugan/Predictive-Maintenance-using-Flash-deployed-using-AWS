@@ -1,0 +1,64 @@
+.trip-form-container {
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  label {
+    display: inline-block; /* changed from block to inline-block */
+    margin-bottom: 5px;
+    font-weight: bold;
+    width: 45%; /* added width to make them equal */
+    text-align: left;
+  }
+  
+  .date-labels {
+    display: flex; /* added flexbox to align labels horizontally */
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .date-labels label {
+    width: 45%; /* added width to make them equal */
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    background-color: #01959a;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #015659;
+  }

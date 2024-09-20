@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 20px; }
+        .result { padding: 20px; margin-top: 50px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <a href="/predict" class="btn btn-primary btn-custom">Predict</a>
+    <a href="/heatmap" class="btn btn-primary btn-custom">Show Model HeatMap</a>
+    <a href="/data_visualization" class="btn btn-primary btn-custom">data_visualization</a>
+    <a href="/" class="btn btn-primary btn-custom">HOME</a>
+    <div class="container">
+        <h1 class="mt-5">Prediction Result</h1>
+        <div class="result">
+            <p>The predicted value is: <strong>{{ prediction }}</strong></p>
+        </div>
+    </div>
+</body>
+</html>

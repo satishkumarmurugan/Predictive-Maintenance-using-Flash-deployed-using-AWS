@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Maintenance</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            grid-auto-rows: auto;
+            gap: 20px; /* Gap between images */
+            margin-top: 20px; /* Add some margin at the top */
+            justify-items: center; /* Center align images horizontally */
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .centered-images {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        p {
+            text-align: justify; /* Justify the text */
+            font-size: 1.2rem; /* Increase font size */
+            margin-top: 20px; /* Add some top margin */
+            margin-bottom: 20px; /* Add some bottom margin */
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Predictive Maintenance</h1>
+        <a href="/predict" class="btn btn-primary btn-custom">Predict</a>
+        <a href="/heatmap" class="btn btn-primary btn-custom">Show Model HeatMap</a>
+        <a href="/data_visualization" class="btn btn-primary btn-custom">Data Visualization</a>
+        <a href="/" class="btn btn-primary btn-custom">HOME</a>
+        <p>
+            Predictive maintenance involves predicting whether a system or piece of equipment is likely to fail based on input data.
+            In the provided Flask application,the goal is to predict whether a system will fail or not based on various input parameters such as air temperature, 
+            process temperature,rotational speed, torque, tool wear, and equipment type.
+
+            The Flask application utilizes a machine learning model trained on historical data to make these predictions.
+            When users input the relevant data through the application's interface, the model processes this data and provides a prediction on whether the system is likely to fail in the near future.
+
+            By leveraging predictive maintenance techniques, organizations can take proactive measures to prevent equipment failures, 
+            minimize downtime, and optimize maintenance schedules. This can lead to significant cost savings and operational efficiencies by avoiding unexpected breakdowns and maximizing the lifespan of critical equipment.
+        </p>
+        <div class="centered-images">
+            <img src="../static/pie_chart.png" alt="Image 6">
+        </div>
+        
+
+        <div class="image-container">
+            <img src="../static/Failure_Type_1.png" alt="Image 1">
+            <img src="../static/Failure_Type_2.png" alt="Image 2">
+            <img src="../static/Failure_Type_3.png" alt="Image 3">
+            <img src="../static/Failure_Type_4.png" alt="Image 4">
+        </div>
+        
+        <div class="centered-images">
+            <img src="../static/Failure_Type_5.png" alt="Image 5">
+        </div>
+    </div>
+</body>
+</html>

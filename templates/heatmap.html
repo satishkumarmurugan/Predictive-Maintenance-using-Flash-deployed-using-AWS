@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Maintenance</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            grid-auto-rows: auto;
+            gap: 20px; /* Gap between images */
+            margin-top: 20px; /* Add some margin at the top */
+            justify-items: center; /* Center align images horizontally */
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .centered-images {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Added styles for the paragraph */
+        p {
+            text-align: justify; /* Justify the text */
+            font-size: 1.2rem; /* Increase font size */
+            margin-top: 20px; /* Add some top margin */
+            margin-bottom: 20px; /* Add some bottom margin */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <a href="/predict" class="btn btn-primary btn-custom">Predict</a>
+        <a href="/heatmap" class="btn btn-primary btn-custom">Show Model HeatMap</a>
+        <a href="/data_visualization" class="btn btn-primary btn-custom">Data Visualization</a>
+        <a href="/" class="btn btn-primary btn-custom">HOME</a>
+        <p>
+            The images below display heatmaps comparing six different models. 
+            Each heatmap focuses on a specific metric: F1 Score, Accuracy, Precision, and Recall. 
+            These visualizations are essential for evaluating and comparing the performance of each model across these critical metrics, 
+            providing a clear and concise overview of their effectiveness in various aspects of prediction. 
+            This comparative approach allows for an in-depth analysis of each model's strengths and weaknesses, 
+            facilitating informed decisions regarding model selection and further optimization.
+        </p>
+        
+        <div class="image-container">
+            <img src="../static/f1_score_heatmap.png" alt="Image 1">
+            <img src="../static/Accuracy_Scores_Heatmap.png" alt="Image 2">
+            <img src="../static/recall_score_heatmap.png" alt="Image 3">
+            <img src="../static/precision_score_heatmap.png" alt="Image 4">
+        </div>
+        
+    </div>
+</body>
+</html>
