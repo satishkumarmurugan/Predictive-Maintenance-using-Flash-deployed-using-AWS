@@ -5,7 +5,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load your trained model
-model = joblib.load('filename.pkl')
+model = joblib.load('xgboost_model.pkl')
 
 @app.route('/')
 def home():
@@ -20,7 +20,7 @@ def data_visualization():
     return render_template('data_visualization.html')
 
 @app.route('/predict', methods=['POST', 'GET'])
-def predict_manually():
+def predict_manually():       
     if request.method == 'POST':
         # Collect data from form
         try:
@@ -29,15 +29,27 @@ def predict_manually():
             Rotational_speed = float(request.form['Rotational_speed'])
             Torque = float(request.form['Torque'])
             Tool_wear = float(request.form['Tool_wear'])
-            Type_L = float(request.form['Type_L'])
-            Type_M = float(request.form['Type_M'])
+            Type = float(request.form['Type'])
 
             # Prepare data for prediction
-            sample = np.array([[Air_temperature, Process_temperature, Rotational_speed, Torque, Tool_wear, Type_L, Type_M]])
+            sample = np.array([[Type, Air_temperature, Process_temperature, Rotational_speed, Torque, Tool_wear]])
             prediction = model.predict(sample)[0]
 
+            # Dictionary mapping numeric labels to failure types
+            failure_type_mapping = {
+                0: 'Heat Dissipation Failure',
+                1: 'No Failure',
+                2: 'Overstrain Failure',
+                3: 'Power Failure',
+                4: 'Random Failures',
+                5: 'Tool Wear Failure'
+            }
+
+            # Get the type of failure prediction
+            failure_type_prediction = failure_type_mapping[prediction]
+
             # Render prediction result via a template
-            return render_template('predict.html', prediction=prediction)
+            return render_template('predict.html', prediction=prediction, failure_type_prediction=failure_type_prediction)
         except ValueError:
             # Handle the error if input is not a float
             return render_template('index.html', error="Please enter valid inputs.")
@@ -46,4 +58,4 @@ def predict_manually():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080)

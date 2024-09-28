@@ -12,6 +12,7 @@
     </style>
 </head>
 <body>
+<center>
     <a href="/predict" class="btn btn-primary btn-custom">Predict</a>
     <a href="/heatmap" class="btn btn-primary btn-custom">Show Model HeatMap</a>
     <a href="/data_visualization" class="btn btn-primary btn-custom">data_visualization</a>
@@ -19,8 +20,11 @@
     <div class="container">
         <h1 class="mt-5">Prediction Result</h1>
         <div class="result">
-            <p>The predicted value is: <strong>{{ prediction }}</strong></p>
+            <p>The predicted numeric value is: <strong>{{ prediction }}</strong></p>
+            <p>The predicted type of failure is: <strong>{{ failure_type_prediction }}</strong></p>
         </div>
     </div>
+</center>
 </body>
 </html>
+
