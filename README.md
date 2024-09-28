@@ -1,6 +1,3 @@
-
-
-```markdown
 # Predictive Maintenance using Flash (Deployed using AWS)
 
 This project implements predictive maintenance using machine learning and is deployed on AWS. Follow the steps below to set up and run the application.
@@ -48,9 +45,4 @@ This will launch the predictive maintenance application. You can now access the 
 
 ## Deployment
 This project is deployed using AWS for cloud hosting.
-
-## License
-This project is licensed under the [Your License] License. See the LICENSE file for more details.
-```
-
-You can replace the license and other project-specific details as needed.
+Link:- http://ec2-3-108-228-79.ap-south-1.compute.amazonaws.com:8080
